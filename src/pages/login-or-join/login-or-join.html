@@ -1,0 +1,51 @@
+<ion-content padding id="page1" class="login">
+  <div class="spacer" style="height:70px;" id="loginOrJoin-spacer1"></div>
+  <img src="assets/img/sLuMyXs5RcSfT0yAJY7N_Auxi_logo.png" style="display:block;width:60%;height:auto;margin-left:auto;margin-right:auto;" />
+  <div class="spacer" style="height:25px;" id="loginOrJoin-spacer2"></div>
+  <img src="assets/img/tT7W4JdT4ug3EROHZjAB_ZjxyZQGSQM4zG1cePA3w_Auxi_text.png" style="display:block;width:55%;height:auto;margin-left:auto;margin-right:auto;" />
+  <button id="loginOrJoin-button1" ion-button outline color="positive" round block style="font-weight:300;font-size:18px;" on-click="nav_goToLoginWithEmail()">
+    Login
+  </button>
+  <button id="loginOrJoin-button2" ion-button color="positive" round block style="font-weight:300;font-size:18px;" on-click="nav_goToJoinAuxi()">
+    Join
+  </button>
+  <div id="loginOrJoin-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#009688;font-size:16px;">
+      -- or login with --
+    </p>
+  </div>
+  <div>
+      <ion-grid class="button-group">
+          <ion-row>
+            <ion-col>
+              <button ion-button block clear>
+                <ion-icon name="logo-facebook" color="primary" style="zoom:2.0;" (click)="loginWithFb()"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button block clear>
+                <ion-icon name="logo-google" color="primary" style="zoom:2.0;" (click)="loginWithGoogle()" ></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button block clear >
+                <ion-icon name="logo-twitter" color="primary" style="zoom:2.0;" (click)="loginInWithTwitter()"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+     </ion-grid>
+  
+     <!-- <div>
+      <ion-item >
+        <ion-avatar item-left>
+          <img [src]="userProfile.photoURL">
+        </ion-avatar>
+        <h2>{{ userProfile.displayName }}</h2>
+        <h3>{{ userProfile.email }}</h3>
+      </ion-item>
+     </div>
+    -->
+    
+  </div> 
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Images
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let photo of photos">
+    <img src="{{photo}}" />
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block (click)="presentActionSheet()">Upload my Photo</button>
+    <button ion-button block (click)="nav_goToHomescreen()">Skip</button>
+  </ion-toolbar>
+</ion-footer>

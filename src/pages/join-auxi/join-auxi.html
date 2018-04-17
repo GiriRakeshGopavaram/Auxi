@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button></button>
+    </ion-buttons>
+    <ion-title>
+      Join Auxi
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page5" class="join" style="background-color:#EEEEEE;">
+  <form id="joinAuxi-form6" [formGroup] = "joinForm">
+    <ion-list id="joinAuxi-list2">
+      <ion-item id="joinAuxi-input7" >
+        <ion-label>
+            <ion-icon name="ios-person"></ion-icon>
+        </ion-label>
+        <ion-input type="text" placeholder="First name" formControlName = 'firstName' ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls['firstName'].valid">
+        <p style="color:red">First Name should have minimum of 2 characters</p>
+      </ion-item>
+      <ion-item id="joinAuxi-input10">
+        <ion-label>
+            <ion-icon name="ios-person"></ion-icon>
+        </ion-label>
+        <ion-input type="text" placeholder="Last name, e.g. Kent" formControlName = 'lastName'></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls['lastName'].valid && joinForm.controls['lastName'].touched">
+        <p style="color:red">Last Name should have minimum of 2 characters</p>
+      </ion-item>
+      <ion-item id="joinAuxi-input11">
+          <ion-label>
+              <ion-icon name="android-call"></ion-icon>
+          </ion-label>
+        <ion-input type="tel" placeholder="Mobile number, e.g. (201) 867-5309" formControlName = 'mobile'></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls['mobile'].valid && joinForm.controls['mobile'].touched">
+        <p style="color:red">Mobile number is invalid</p>
+      </ion-item>
+      <ion-item id="joinAuxi-input8">
+        <ion-label>
+            <ion-icon name="ios-email"></ion-icon>
+        </ion-label>
+        <ion-input type="email" placeholder="e-mail, e.g. ckent@kryptonite.com" formControlName = 'email'></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls['email'].valid && joinForm.controls['email'].touched">
+        <p style="color:red">E-mail is invalid</p>
+      </ion-item>
+      <ion-item id="joinAuxi-input9">
+        <ion-label>
+            <ion-icon name="lock"></ion-icon>
+        </ion-label>
+        <ion-input type="text" placeholder="Password, e.g. w3lc0me_2_@auxi" formControlName = 'password'></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls['password'].valid && joinForm.controls['password'].touched">
+        <p style="color:red">Password is invalid</p>
+      </ion-item>
+      <ion-item id="joinAuxi-input12">
+        <ion-label>
+            <ion-icon name="lock"></ion-icon>
+        </ion-label>
+        <ion-input type="password" placeholder="Confirm password" formControlName = 'confirmPassword'></ion-input>
+      </ion-item>
+      <ion-item style="opacity:0.5" *ngIf="joinForm.controls.confirmPassword.touched && joinForm.hasError('mismatchedPasswords') && joinForm.controls.password.valid">
+        <p style="color:red">Passwords do not match</p>
+      </ion-item>
+    </ion-list>
+    <div id="joinAuxi-markdown5" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#009688;">
+        By joining Auxi, you are agreeing with Auxi&#39;s
+        <a (click)="nav_goToTerms()">
+          <strong>
+            Terms and Conditions
+          </strong>
+        </a>
+        
+        and
+        <a (click)="nav_goToPrivacyPolicy()">
+          <strong>
+            Privacy Policy
+          </strong>
+        </a>
+        .
+      </p>
+    </div> 
+  </form>
+  <button id="joinAuxi-button10" ion-button color="positive" block round style="font-size:18px;" on-click="nav_goToAcademicInformation(joinForm)">
+    join
+  </button>
+</ion-content>
